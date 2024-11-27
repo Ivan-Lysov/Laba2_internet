@@ -3,16 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Пепперони</title>
+    <title>Пицца Бефстроганов</title>
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/localstr.css">
 </head>
 <body>
     <div class="pizza-details">
-        <h1 id="pizza-title"></h1>
-        <img id="pizza-image" alt="Пицца" class="pizza-image">
-        <p id="pizza-price" class="pizza-price">Цена: 600 ₽</p>
-        <p id="pizza-description" class="pizza-description"></p>
+        <h1 id="pizza-title">Вегетарианская Пицца</h1>
+        <img id="pizza-image" src="../images/befstroganov.jpg" alt="Пицца Бефстроганов" class="pizza-image">
+        <p id="pizza-price" class="pizza-price">Цена: 800 ₽</p>
+        <p id="pizza-description" class="pizza-description">
+            Пицца с насыщенным вкусом говядины в соусе Бефстроганов, сочетающаяся с ароматным соусом, грибами и луком.  
+        </p>
 
         <div class="ingredients">
             <h2>Добавить ингредиенты:</h2>
@@ -26,9 +28,6 @@
                 <input type="checkbox" id="mushrooms"> Грибы (60 ₽)
             </div>
             <div class="ingredient-option">
-                <input type="checkbox" id="bacon"> Бекон (80 ₽)
-            </div>
-            <div class="ingredient-option">
                 <input type="checkbox" id="corn"> Кукуруза (40 ₽)
             </div>
             <div class="ingredient-option">
@@ -37,7 +36,7 @@
         </div>
 
         <!-- Итоговая цена -->
-        <p><strong>Итоговая стоимость: <span id="total-price">600</span> ₽</strong></p>
+        <p><strong>Итоговая стоимость: <span id="total-price">800</span> </strong></p>
 
         <button class="add-to-cart-btn">Добавить в корзину</button>
     </div>
