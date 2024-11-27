@@ -1,0 +1,82 @@
+/* Обновленный стиль для страницы */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.pizza-item a {
+    display: block; /* Ссылка будет блоком, охватывая весь элемент */
+    text-decoration: none; /* Убираем подчеркивание */
+    color: inherit; /* Наследуем цвет от родительского элемента */
+}
+
+.pizza-item a:hover {
+    opacity: 0.8; /* Эффект при наведении, чтобы показать, что это кликабельный элемент */
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.menu {
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.pizza-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.pizza-item {
+    width: calc(33.33% - 20px);
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 15px;
+}
+
+.pizza-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out; /* Плавный переход */
+}
+
+.pizza-item img:hover {
+    transform: scale(1.1); /* Увеличение изображения на 10% */
+}
+
+.pizza-item h2 {
+    margin-top: 15px;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.pizza-item p {
+    color: #555;
+    margin-top: 10px;
+}
+
+
+
+/* Адаптивность для разных размеров экранов */
+@media (max-width: 1200px) {
+    .pizza-item {
+        width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .pizza-item {
+        width: 100%;
+    }
+}

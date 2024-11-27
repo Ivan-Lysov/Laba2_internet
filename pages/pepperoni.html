@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пепперони</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/localstr.css">
+</head>
+<body>
+    <div class="pizza-details">
+        <h1 id="pizza-title"></h1>
+        <img id="pizza-image" alt="Пицца" class="pizza-image">
+        <p id="pizza-price" class="pizza-price">Цена: 550 ₽</p>
+        <p id="pizza-description" class="pizza-description"></p>
+
+        <div class="ingredients">
+            <h2>Добавить ингредиенты:</h2>
+            <div class="ingredient-option">
+                <input type="checkbox" id="olives"> Маслины (50 ₽)
+            </div>
+            <div class="ingredient-option">
+                <input type="checkbox" id="cheese"> Дополнительный сыр (70 ₽)
+            </div>
+            <div class="ingredient-option">
+                <input type="checkbox" id="mushrooms"> Грибы (60 ₽)
+            </div>
+            <div class="ingredient-option">
+                <input type="checkbox" id="bacon"> Бекон (80 ₽)
+            </div>
+            <div class="ingredient-option">
+                <input type="checkbox" id="corn"> Кукуруза (40 ₽)
+            </div>
+            <div class="ingredient-option">
+                <input type="checkbox" id="onions"> Лук (30 ₽)
+            </div>
+        </div>
+
+        <!-- Итоговая цена -->
+        <p><strong>Итоговая стоимость: <span id="total-price">550</span> ₽</strong></p>
+
+        <button class="add-to-cart-btn">Добавить в корзину</button>
+    </div>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/pizza.js"></script>
+</body>
+</html>

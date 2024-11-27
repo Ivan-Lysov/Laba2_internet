@@ -1,0 +1,178 @@
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #333;
+    margin-top: 30px;
+}
+
+/* Описание состава пиццы */
+p {
+    font-size: 1.2rem;
+    color: #555;
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Блок с добавлением ингредиентов */
+h2 {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-top: 20px;
+    color: #333;
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+button {
+    display: block;
+    width: 200px;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #ff6600;
+    color: white;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ff4500;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.pizza-details {
+    max-width: 800px;
+    margin: 30px auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pizza-details h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.pizza-image {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 8px;
+}
+
+.pizza-price,
+.pizza-description {
+    text-align: center;
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.ingredients {
+    margin-top: 20px;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.ingredient-option {
+    margin: 10px 0;
+    font-size: 1.1rem;
+}
+
+.add-to-cart-btn {
+    display: block;
+    width: 100%;
+    background-color: #ff7f50;
+    color: white;
+    padding: 15px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #ff5722;
+}
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+        margin-top: 20px;
+    }
+
+    .pizza-details {
+        padding: 15px;
+    }
+
+    .pizza-price,
+    .pizza-description {
+        font-size: 1rem;
+    }
+
+    .pizza-image {
+        max-width: 100%;
+    }
+
+    .ingredient-option {
+        font-size: 1rem;
+    }
+
+    button {
+        width: 100%;
+        font-size: 1rem;
+        padding: 12px;
+    }
+
+    .add-to-cart-btn {
+        font-size: 1rem;
+        padding: 12px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .pizza-details {
+        margin: 15px;
+        padding: 10px;
+    }
+
+    .pizza-price,
+    .pizza-description {
+        font-size: 0.9rem;
+    }
+
+    .ingredient-option {
+        font-size: 0.9rem;
+    }
+
+    button {
+        width: 100%;
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+
+    .add-to-cart-btn {
+        font-size: 1rem;
+        padding: 12px;
+    }
+}
