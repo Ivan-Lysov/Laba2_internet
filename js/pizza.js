@@ -1,147 +1,149 @@
+const allIngredients = {
+    olives: 50,        // Маслины
+    cheese: 70,        // Дополнительный сыр
+    mushrooms: 60,     // Грибы
+    bacon: 80,         // Бекон
+    corn: 40,          // Кукуруза
+    onions: 30,        // Лук
+    ham: 100,          // Ветчина
+    pineapple: 90,     // Ананас
+    pepperoni: 110,    // Пепперони
+    spicySauce: 130,   // Острый соус
+    parmigiano: 90,    // Пармезан
+    gorgonzola: 100,   // Горгонзола
+    emmental: 80,      // Эмменталь
+};
+
+// Пиццы с их ингредиентами
 const pizzas = {
     margherita: {
         title: "Маргарита",
         image: "../images/margherita.jpg",  // Убедитесь, что путь правильный
         description: "Томатный соус, моцарелла, базилик.",
         basePrice: 500,
-        ingredients: {
-            olives: 50,        // Маслины
-            cheese: 70,        // Дополнительный сыр
-            mushrooms: 60,     // Грибы
-            bacon: 80,         // Бекон
-            corn: 40,          // Кукуруза
-            onions: 30         // Лук
-        }
+        ingredients: [
+            'olives',
+            'gorgonzola',
+            'onions',
+            'spicySauce',
+            'ham'
+        ]
     },
     pepperoni: {
         title: "Пепперони",
-        image: "../images/pepperoni.jpg",  // Убедитесь, что путь правильный
+        image: "../images/pepperoni.jpg",
         description: "Пепперони, томатный соус, моцарелла.",
         basePrice: 600,
-        ingredients: {
-            olives: 50,
-            cheese: 70,
-            mushrooms: 60,
-            bacon: 80,
-            corn: 40,
-            onions: 30
-        }
+        ingredients: [
+            'olives',
+            'mushrooms',
+            'bacon',
+            'ham',
+            'emmental'
+        ]
     },
     beefStroganoff: {
         title: "Бефстроганов",
-        image: "../images/befstroganov.jpg",  // Убедитесь, что путь правильный
-        description: "Пицца с насыщенным вкусом говядины в соусе Бефстроганов, сочетающаяся с ароматным соусом, грибами и луком.",
+        image: "../images/befstroganov.jpg",  // Убедитесь, что путь правильный//Говядина, соус Бефстроганов,грибы,лук
+        description: "Говядина, соус Бефстроганов,грибы,лук",
         basePrice: 800,
-        ingredients: {
-            olives: 50,
-            cheese: 70,
-            mushrooms: 60,
-            bacon: 80,
-            corn: 40,
-            onions: 30
-        }
+        ingredients: [
+            'olives',
+            'cheese',
+            'mushrooms',
+            'bacon',
+            'corn',
+            'onions'
+        ]
     },
     vegetarian: {
         title: "Вегетарианская",
-        image: "../images/veggie.jpg",  // Убедитесь, что путь правильный
-        description: "Легкая и полезная пицца, созданная для тех, кто предпочитает свежие овощи и натуральные ингредиенты. ",
+        image: "../images/veggie.jpg",
+        description: "Томатный соус, моцарелла, паприка, грибы, оливки.",
         basePrice: 550,
-        ingredients: {
-            olives: 50,
-            cheese: 70,
-            mushrooms: 60,
-            bacon: 80,
-            corn: 40,
-            onions: 30
-        }
+        ingredients: [
+            'cheese',
+            'corn',
+            'onions',
+            'pineapple'
+        ]
     },
     hawaiian: {
         title: "Гавайская",
-        image: "../images/hawaiian.jpg",  // Убедитесь, что путь правильный
-        description: "Экзотическая пицца с комбинацией сладкого и соленого: нежная ветчина и сочный ананас создают неповторимый вкус. ",
+        image: "../images/hawaiian.jpg",
+        description: "Ветчина, ананас, моцарелла, томатный соус.",
         basePrice: 650,
-        ingredients: {
-            olives: 50,
-            cheese: 70,
-            mushrooms: 60,
-            bacon: 80,
-            corn: 40,
-            onions: 30
-        }
+        ingredients: [
+            'olives',
+            'corn',
+            'bacon',
+            'parmigiano'
+        ]
     },
     quatroFormaggi: {
         title: "Кватро Формаджи",
-        image: "../images/quattro_formaggi.jpg",  // Убедитесь, что путь правильный
-        description: "Классическая пицца для ценителей сыра.",
+        image: "../images/quattro_formaggi.jpg",
+        description: "Моцарелла, пармезан, горгонзола, эмменталь.",
         basePrice: 750,
-        ingredients: {
-            olives: 50,        // Маслины
-            cheese: 70,        // Дополнительный сыр
-            mushrooms: 60,     // Грибы
-            bacon: 80,         // Бекон
-            corn: 40,          // Кукуруза
-            onions: 30         // Лук
-        }
+        ingredients: [
+            'mushrooms',
+            'onions',
+            'bacon',
+            'pepperoni'
+        ]
     },
     marine: {
         title: "Морская",
-        image: "../images/seafood.jpg",  // Убедитесь, что путь правильный
-        description: "Пицца с дарами моря для настоящих любителей морепродуктов.",
+        image: "../images/seafood.jpg",
+        description: "Морепродукты, моцарелла, томатный соус.",
         basePrice: 850,
-        ingredients: {
-            olives: 50,
-            cheese: 70,
-            mushrooms: 60,
-            bacon: 80,
-            corn: 40,
-            onions: 30
-        }
+        ingredients: [
+            'olives',
+            'onions',
+            'corn',
+            'spicySauce'
+        ]
     },
     calzone: {
         title: "Кальцоне",
-        image: "../images/calzone.jpg",  // Убедитесь, что путь правильный
-        description: "Закрытая пицца с насыщенной начинкой из сыра, мяса и овощей.",
+        image: "../images/calzone.jpg",
+        description: "Ветчина, моцарелла, томатный соус.",
         basePrice: 700,
-        ingredients: {
-            olives: 50,
-            cheese: 70,
-            mushrooms: 60,
-            bacon: 80,
-            corn: 40,
-            onions: 30
-        }
+        ingredients: [
+            'olives',
+            'mushrooms',
+            'bacon',
+            'spicySauce'
+        ]
     },
     diablo: {
         title: "Диабло",
-        image: "../images/diablo.jpg",  // Убедитесь, что путь правильный
-        description: "Острая пицца для любителей жгучих вкусов.",
+        image: "../images/diablo.jpg",
+        description: "Острый соус, пепперони, моцарелла.",
         basePrice: 750,
-        ingredients: {
-            olives: 50,
-            cheese: 70,
-            mushrooms: 60,
-            bacon: 80,
-            corn: 40,
-            onions: 30
-        }
+        ingredients: [
+            'olives',
+            'onions',
+            'cheese',
+            'bacon'
+        ]
     },
     italian: {
         title: "Итальянская",
-        image: "../images/italian.jpg",  // Убедитесь, что путь правильный
-        description: "Классическая пицца в лучших итальянских традициях.",
+        image: "../images/italian.jpg",
+        description: "Ветчина, оливки, моцарелла, томатный соус.",
         basePrice: 650,
-        ingredients: {
-            olives: 50,
-            cheese: 70,
-            mushrooms: 60,
-            bacon: 80,
-            corn: 40,
-            onions: 30
-        }
+        ingredients: [
+            'corn',
+            'onions',
+            'bacon',
+            'emmental'
+        ]
     },
 };
 
-const pizzaId = window.location.pathname.split('/').pop().split('.').shift(); // например, "margherita"
+// Получаем ID пиццы из URL
+const pizzaId = window.location.pathname.split('/').pop().split('.').shift(); 
 console.log("ID пиццы из URL:", pizzaId);
 
 const pizza = pizzas[pizzaId]; // Получаем данные для этой пиццы
@@ -155,21 +157,26 @@ if (pizza) {
     console.log("Пицца не найдена");
 }
 
+// Функция для подсчета стоимости пиццы с выбранными дополнительными ингредиентами
+// Функция для подсчета стоимости пиццы с выбранными дополнительными ингредиентами
 const ingredientCheckboxes = document.querySelectorAll('input[type="checkbox"]');
 const totalPriceElement = document.getElementById('total-price');
 
+// Обновляем цену, учитывая выбранные ингредиенты
 function updatePrice() {
-    let totalPrice = pizza.basePrice;
+    let totalPrice = pizza.basePrice; // Начальная цена пиццы
 
+    // Перебираем все чекбоксы для дополнительных ингредиентов
     ingredientCheckboxes.forEach(checkbox => {
         if (checkbox.checked) {
-            const ingredientId = checkbox.id;
-            const ingredientPrice = pizza.ingredients[ingredientId];
-            totalPrice += ingredientPrice;
+            const ingredientId = checkbox.id;  // Получаем id выбранного ингредиента
+            // Находим стоимость ингредиента из allIngredients
+            const ingredientPrice = allIngredients[ingredientId];
+            totalPrice += ingredientPrice;  // Добавляем стоимость ингредиента к общей стоимости
         }
     });
 
-    totalPriceElement.textContent = `${totalPrice} ₽`;
+    totalPriceElement.textContent = `${totalPrice} ₽`; // Отображаем итоговую цену
 }
 
 // Добавляем обработчики событий для каждого чекбокса
