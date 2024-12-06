@@ -104,42 +104,6 @@ const pizzas = {
             'spicySauce'
         ]
     },
-    calzone: {
-        title: "Кальцоне",
-        image: "../images/calzone.jpg",
-        description: "Ветчина, моцарелла, томатный соус.",
-        basePrice: 700,
-        ingredients: [
-            'olives',
-            'mushrooms',
-            'bacon',
-            'spicySauce'
-        ]
-    },
-    diablo: {
-        title: "Диабло",
-        image: "../images/diablo.jpg",
-        description: "Острый соус, пепперони, моцарелла.",
-        basePrice: 750,
-        ingredients: [
-            'olives',
-            'onions',
-            'cheese',
-            'bacon'
-        ]
-    },
-    italian: {
-        title: "Итальянская",
-        image: "../images/italian.jpg",
-        description: "Ветчина, оливки, моцарелла, томатный соус.",
-        basePrice: 650,
-        ingredients: [
-            'corn',
-            'onions',
-            'bacon',
-            'emmental'
-        ]
-    },
 };
 
 // Получаем ID пиццы из URL
