@@ -16,33 +16,30 @@
 
         <div class="ingredients">
             <h2>Добавить ингредиенты:</h2>
-            <div class="ingredient-option">
-                <input type="checkbox" id="olives"> Маслины (50 ₽)
-            </div>
-            <div class="ingredient-option">
-                <input type="checkbox" id="cheese"> Дополнительный сыр (70 ₽)
-            </div>
-            <div class="ingredient-option">
-                <input type="checkbox" id="mushrooms"> Грибы (60 ₽)
-            </div>
-            <div class="ingredient-option">
-                <input type="checkbox" id="bacon"> Бекон (80 ₽)
-            </div>
-            <div class="ingredient-option">
-                <input type="checkbox" id="corn"> Кукуруза (40 ₽)
-            </div>
-            <div class="ingredient-option">
-                <input type="checkbox" id="onions"> Лук (30 ₽)
-            </div>
+            <!-- Ингредиенты будут вставляться динамически через JavaScript -->
         </div>
 
-        <!-- Итоговая цена -->
-        <p><strong>Итоговая стоимость: <span id="total-price">800</span> </strong></p>
+        <!-- Итоговая стоимость -->
+        <p><strong>Итоговая стоимость: <span id="total-price">800</span> ₽</strong></p>
 
-        <button class="add-to-cart-btn">Добавить в корзину</button>
+        <!-- Форма для данных доставки -->
+        <div class="delivery-form">
+            <h2>Оформление доставки</h2>
+            <form id="order-form" class="form-column">
+                <label for="name">Ваше имя:</label>
+                <input type="text" id="name" name="name" class="form-input" required>
+        
+                <label for="phone">Ваш номер телефона:</label>
+                <input type="tel" id="phone" name="phone" class="form-input" required placeholder="+7XXXXXXXXXX">
+        
+                <label for="address">Адрес доставки:</label>
+                <input type="text" id="address" name="address" class="form-input" required>
+        
+                <button type="submit" class="form-button">Подтвердить заказ</button>
+            </form>
+        </div>
     </div>
 
-    <script src="../js/script.js"></script>
     <script src="../js/pizza.js"></script>
 </body>
 </html>

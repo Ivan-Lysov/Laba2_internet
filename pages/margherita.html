@@ -16,30 +16,29 @@
 
         <div class="ingredients">
             <h2>Добавить ингредиенты:</h2>
-            <div class="ingredient-option">
-                <input type="checkbox" id="olives"> Маслины (50 ₽)
-            </div>
-            <div class="ingredient-option">
-                <input type="checkbox" id="gorgonzola"> Горгонзола (100 ₽)
-            </div>
-            <div class="ingredient-option">
-                <input type="checkbox" id="onions"> Лук (30 ₽)
-            </div>
-            <div class="ingredient-option">
-                <input type="checkbox" id="spicySauce"> Острый соус (130 ₽)
-            </div>
-            <div class="ingredient-option">
-                <input type="checkbox" id="ham"> Ветчина (100 ₽)
-            </div>
+            <!-- Ingredient options will be inserted dynamically here -->
         </div>
 
         <!-- Итоговая цена -->
         <p><strong>Итоговая стоимость: <span id="total-price">500</span> ₽</strong></p>
 
-        <button class="add-to-cart-btn">Добавить в корзину</button>
+        <div class="delivery-form">
+            <h2>Оформление доставки</h2>
+            <form id="order-form" class="form-column">
+                <label for="name">Ваше имя:</label>
+                <input type="text" id="name" name="name" class="form-input" required>
+        
+                <label for="phone">Ваш номер телефона:</label>
+                <input type="tel" id="phone" name="phone" class="form-input" required placeholder="+7XXXXXXXXXX">
+        
+                <label for="address">Адрес доставки:</label>
+                <input type="text" id="address" name="address" class="form-input" required>
+        
+                <button type="submit" class="form-button">Подтвердить заказ</button>
+            </form>
+        </div>
     </div>
 
-    <script src="../js/script.js"></script>
     <script src="../js/pizza.js"></script> 
 </body>
 </html>

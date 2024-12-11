@@ -3,43 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Пепперони</title>
+    <title>Пицца Пепперони</title>
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/localstr.css">
 </head>
 <body>
     <div class="pizza-details">
-        <h1 id="pizza-title"></h1>
-        <img id="pizza-image" alt="Пицца" class="pizza-image">
+        <h1 id="pizza-title">Пепперони</h1>
+        <img id="pizza-image" src="../images/pepperoni.jpg" alt="Пепперони" class="pizza-image">
         <p id="pizza-price" class="pizza-price"></p>
         <p id="pizza-description" class="pizza-description"></p>
 
         <div class="ingredients">
             <h2>Добавить ингредиенты:</h2>
-            <div class="ingredient-option">
-                <input type="checkbox" id="olives"> Маслины (50 ₽)
-            </div>
-            <div class="ingredient-option">
-                <input type="checkbox" id="mushrooms"> Грибы (60 ₽)
-            </div>
-            <div class="ingredient-option">
-                <input type="checkbox" id="bacon"> Бекон (80 ₽)
-            </div>
-            <div class="ingredient-option">
-                <input type="checkbox" id="ham"> Ветчина (100 ₽)
-            </div>
-            <div class="ingredient-option">
-                <input type="checkbox" id="emmental"> Эмменталь (80 ₽)
-            </div>
+            <!-- Ингредиенты будут вставляться динамически через JavaScript -->
         </div>
 
-        <!-- Итоговая цена -->
+        <!-- Итоговая стоимость -->
         <p><strong>Итоговая стоимость: <span id="total-price">600</span> ₽</strong></p>
 
-        <button class="add-to-cart-btn">Добавить в корзину</button>
+        <div class="delivery-form">
+            <h2>Оформление доставки</h2>
+            <form id="order-form" class="form-column">
+                <label for="name">Ваше имя:</label>
+                <input type="text" id="name" name="name" class="form-input" required>
+        
+                <label for="phone">Ваш номер телефона:</label>
+                <input type="tel" id="phone" name="phone" class="form-input" required placeholder="+7XXXXXXXXXX">
+        
+                <label for="address">Адрес доставки:</label>
+                <input type="text" id="address" name="address" class="form-input" required>
+        
+                <button type="submit" class="form-button">Подтвердить заказ</button>
+            </form>
+        </div>
     </div>
 
-    <script src="../js/script.js"></script>
     <script src="../js/pizza.js"></script>
 </body>
 </html>

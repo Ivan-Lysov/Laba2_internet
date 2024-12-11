@@ -1,0 +1,45 @@
+[
+    {
+        "id": "margherita",
+        "title": "Маргарита",
+        "image": "../images/margherita.jpg",
+        "description": "Томатный соус, моцарелла, базилик.",
+        "basePrice": 500,
+        "ingredients": [
+            "Оливки",
+            "Горгонзола",
+            "Лук",
+            "Острый соус",
+            "Хамон"
+        ]
+    },
+    {
+        "id": "pepperoni",
+        "title": "Пепперони",
+        "image": "../images/pepperoni.jpg",
+        "description": "Пепперони, томатный соус, моцарелла.",
+        "basePrice": 600,
+        "ingredients": [
+            "Оливки",
+            "Грибы",
+            "Бекон",
+            "Хамон",
+            "Эмменталь"
+        ]
+    },
+    {
+        "id": "beefStroganoff",
+        "title": "Бефстроганов",
+        "image": "../images/befstroganov.jpg",
+        "description": "Говядина, соус Бефстроганов, грибы, лук.",
+        "basePrice": 800,
+        "ingredients": [
+            "Оливки",
+            "Сыр Российский",
+            "Грибы",
+            "Бекон",
+            "Кукуруза",
+            "Лук"
+        ]
+    }
+]
