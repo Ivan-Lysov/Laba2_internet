@@ -6,7 +6,7 @@ async function loadJSON(url) {
 // This function loads the pizza menu (index page)
 // Функция загрузки меню пиццы
 async function loadPizzaMenu() {
-    const pizzas = await loadJSON('pizzas.json'); // Загрузка данных о пиццах
+    const pizzas = await loadJSON('../db/pizzas.json'); // Загрузка данных о пиццах
 
     const pizzaContainer = document.getElementById('pizza-container');
     
@@ -27,8 +27,8 @@ async function loadPizzaMenu() {
 
 // Функция загрузки деталей пиццы
 async function loadPizzaDetails() {
-    const pizzas = await loadJSON('../pizzas.json'); // Загружаем все пиццы
-    const ingredientPrices = await loadJSON('../ingredients.json'); // Загружаем цены на ингредиенты
+    const pizzas = await loadJSON('../db/pizzas.json'); // Загружаем все пиццы
+    const ingredientPrices = await loadJSON('../db/ingredients.json'); // Загружаем цены на ингредиенты
 
     // Получаем ID пиццы из URL
     const urlParams = new URLSearchParams(window.location.search);

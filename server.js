@@ -10,6 +10,18 @@ const db = new Pool({
     password: 'your_password',
     port: 5432,
 });
+app.use(express.static('pages'))
+app.use('/css', express.static('css'));
+
+// Статичные файлы из папки js
+app.use('/js', express.static('js'));
+
+// Статичные файлы из папки images
+app.use('/images', express.static('images'));
+
+// Статичные файлы из папки pages
+app.use('/pages', express.static('pages'));
+app.use('/db', express.static('db'));
 
 // Эндпоинт для получения данных о пицце
 app.get('/api/pizzas/:id', async (req, res) => {
@@ -49,5 +61,5 @@ app.get('/api/pizzas/:id', async (req, res) => {
 });
 
 // Запуск сервера
-const PORT = 3000;
-app.listen(PORT, () => console.log(`Сервер запущен на http://localhost:${PORT}`));
+const PORT_SERVER = 3000;
+app.listen(PORT_SERVER, () => console.log(`Сервер запущен на http://localhost:${PORT_SERVER}`));
