@@ -1,0 +1,16 @@
+[
+  {
+    "pizzaId": "pepperoni",
+    "totalPrice": 800,
+    "ingredients": [
+      "Оливки",
+      "Грибы",
+      "Бекон"
+    ],
+    "customer": {
+      "name": "Иван",
+      "phone": "324923843",
+      "address": "Деловая 9к1"
+    }
+  }
+]

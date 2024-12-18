@@ -3,27 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Оставить отзыв</title>
-    <link rel="stylesheet" href="../css/styles.css">
+    <title>Отзыв</title>
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-    <div class="feedback-form">
-        <h1>Оставьте свой отзыв</h1>
-        <form id="feedback-form" class="form-column">
-            <label for="rating">Оценка (1-5):</label>
-            <select id="rating" name="rating" class="form-input">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select>
+    <form id="feedback-form" class="form-column">
+        <label for="rating">Оценка (1-5):</label>
+        <select id="rating" name="rating" class="form-input">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
 
-            <label for="comments">Ваши комментарии:</label>
-            <textarea id="comments" name="comments" class="form-input" rows="5" required></textarea>
-
-            <button type="submit" class="form-button">Отправить отзыв</button>
-        </form>
-    </div>
+        <label for="comments">Ваши комментарии:</label>
+        <textarea id="comments" name="comments" class="form-input" rows="5" required></textarea>
+        <script src="../js/pizza.js"></script>
+        <button type="submit" class="form-button">Отправить отзыв</button>
+    </form>
 </body>
 </html>

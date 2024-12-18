@@ -1,65 +1,54 @@
 const express = require('express');
+const fs = require('fs').promises;
 const app = express();
-const { Pool } = require('pg');
+const path = require('path');
 
-// Настройки подключения к базе данных
-const db = new Pool({
-    user: 'your_user',
-    host: 'localhost',
-    database: 'pizza_db',
-    password: 'your_password',
-    port: 5432,
-});
-app.use(express.static('pages'))
+app.use(express.json());
+app.use(express.static('pages'));
 app.use('/css', express.static('css'));
-
-// Статичные файлы из папки js
 app.use('/js', express.static('js'));
-
-// Статичные файлы из папки images
 app.use('/images', express.static('images'));
-
-// Статичные файлы из папки pages
 app.use('/pages', express.static('pages'));
 app.use('/db', express.static('db'));
 
-// Эндпоинт для получения данных о пицце
+const readJSONFile = async (filePath) => {
+    const data = await fs.readFile(filePath, 'utf-8');
+    return JSON.parse(data);
+};
+
+const writeJSONFile = async (filePath, data) => {
+    await fs.writeFile(filePath, JSON.stringify(data, null, 2));
+};
+
 app.get('/api/pizzas/:id', async (req, res) => {
     const pizzaId = req.params.id;
-    try {
-        // Получение данных о пицце
-        const pizzaQuery = `
-            SELECT id, title, image, description, basePrice 
-            FROM Pizzas 
-            WHERE id = $1
-        `;
-        const pizza = await db.query(pizzaQuery, [pizzaId]);
+    const pizzas = await readJSONFile(path.join(__dirname, 'db', 'pizzas.json'));
+    const pizza = pizzas.find(p => p.id === pizzaId);
 
-        // Если пицца не найдена
-        if (pizza.rows.length === 0) {
-            return res.status(404).json({ error: 'Пицца не найдена' });
-        }
-
-        // Получение ингредиентов пиццы
-        const ingredientsQuery = `
-            SELECT i.id, i.name, i.price
-            FROM Ingredients i
-            JOIN PizzaIngredients pi ON pi.ingredient_id = i.id
-            WHERE pi.pizza_id = $1
-        `;
-        const ingredients = await db.query(ingredientsQuery, [pizzaId]);
-
-        // Возвращаем данные о пицце и ингредиентах
-        res.json({
-            pizza: pizza.rows[0],
-            ingredients: ingredients.rows,
-        });
-    } catch (err) {
-        console.error('Ошибка сервера:', err);
-        res.status(500).json({ error: 'Ошибка сервера' });
+    if (!pizza) {
+        return res.status(404).json({ error: 'Пицца не найдена' });
     }
+
+    res.json(pizza);
 });
 
-// Запуск сервера
+app.post('/api/order', async (req, res) => {
+    const orderData = req.body;
+    const ordersFilePath = path.join(__dirname, 'db', 'orders.json');
+    const orders = await readJSONFile(ordersFilePath);
+    orders.push(orderData);
+    await writeJSONFile(ordersFilePath, orders);
+    res.status(201).json({ message: 'Заказ успешно оформлен!' });
+});
+
+app.post('/api/feedback', async (req, res) => {
+    const feedbackData = req.body;
+    const feedbackFilePath = path.join(__dirname, 'db', 'feedback.json');
+    const feedback = await readJSONFile(feedbackFilePath);
+    feedback.push({ rating: feedbackData.rating, comments: feedbackData.comments });
+    await writeJSONFile(feedbackFilePath, feedback);
+    res.status(201).json({ message: 'Отзыв успешно отправлен!' });
+});
+
 const PORT_SERVER = 3000;
 app.listen(PORT_SERVER, () => console.log(`Сервер запущен на http://localhost:${PORT_SERVER}`));
